@@ -2,9 +2,12 @@
 
 ___IMPORTHEADER_cocoaTouchSubclass___
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___
 
-/*创建TableviewCell**/
-+ (instancetype)cellWithTableView:(UITableView *)tableView;
+///
+@property (nonatomic, strong) id cellModel;
 
 @end
+NS_ASSUME_NONNULL_END

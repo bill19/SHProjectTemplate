@@ -8,28 +8,14 @@
 
 @implementation ___FILEBASENAMEASIDENTIFIER___
 
+#pragma mark - life circle
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView {
-
-    NSString *ID = NSStringFromClass([___FILEBASENAMEASIDENTIFIER___ class]);
-
-    ___FILEBASENAMEASIDENTIFIER___ *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        cell = [[___FILEBASENAMEASIDENTIFIER___ alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    return cell;
-
+- (void)initialize {
+    [self setupSubViews];
+    [self setConstains];
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setAccessoryType:UITableViewCellAccessoryNone];
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [self setupSubViews];
-        [self setupLayout];
-    }
-    return self;
-}
+
 
 #pragma mark - UISetup
 - (void)setupSubViews {
@@ -37,10 +23,22 @@
 
 }
 
-#pragma mark - Layout
-- (void)setupLayout {
+- (void)setConstains {
+    
+    
+}
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+}
 
+- (void)setCellModel:(id)cellModel {
+    _cellModel = cellModel;
+    
+
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 @end
